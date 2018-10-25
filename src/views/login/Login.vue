@@ -1,15 +1,40 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div class="login-container pull-height" @keyup.enter.native="handleLogin">
+    <div class="login-info text-white animated fadeInLeft">
+      <div class="logo" style="margin-top:-426px">
+        <img src="../../assets/images/home/logo.png" width="160px" height="160px" alt="logo" style="vertical-align: middle;" />
+      </div>
+      <h2 class="login-info-title">{{website.info.title}}</h2>
+
+    </div>
+    <div class="login-border  animated fadeInRight">
+
+    </div>
+
   </div>
 </template>
-
 <script>
-export default {
-  name: 'App'
-}
+  import userLogin from './userlogin'
+  import { mapGetters } from 'vuex'
+  export default {
+    name: 'login',
+    components: {
+      userLogin,
+    },
+    data() {
+      return {
+        activeName: 'user'
+      }
+    },
+    created() {},
+    mounted() {},
+    computed: {
+      ...mapGetters(['website'])
+    },
+    props: [],
+    methods: {}
+  }
 </script>
-
 
 <style lang="scss">
   .login-container {
@@ -28,7 +53,7 @@ export default {
     top: 0;
     width: 100%;
     height: 100%;
-    background-image: url("./assets/images/top_images/login.png");
+    background-image: url("../../assets/images/top_images/login.png");
     background-size: cover;
   }
   .login-info {
