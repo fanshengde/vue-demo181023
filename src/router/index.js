@@ -13,3 +13,11 @@ export default new Router({
     }
   ]
 })
+
+
+export const constantRouterMap = [
+
+]
+export const asyncRouterMap = [
+
+]
